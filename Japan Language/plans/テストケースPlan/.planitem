@@ -2,6 +2,19 @@
 <testPlan guid="3e344ea2-48f1-41a6-93fd-ad1c764dd751">
   <planSettings/>
   <planFeatures>
+    <planFeature enabled="true" name="PIECHART" type="OUTPUT">
+      <settings mutable="Mutable">
+        <namedValue name="enabled">
+          <value class="value" valueClass="boolean">true</value>
+        </namedValue>
+        <namedValue name="includeLegend">
+          <value class="value" valueClass="boolean">true</value>
+        </namedValue>
+        <namedValue name="artifactName">
+          <value class="value" valueClass="string">pieChart.png</value>
+        </namedValue>
+      </settings>
+    </planFeature>
     <planFeature enabled="true" name="PDF" type="OUTPUT">
       <settings mutable="Mutable">
         <namedValue name="enabled">
@@ -57,32 +70,19 @@
         </namedValue>
       </settings>
     </planFeature>
-    <planFeature enabled="true" name="EMAIL" type="NOTIFICATION">
+    <planFeature enabled="false" name="EMAIL" type="NOTIFICATION">
       <settings mutable="Mutable">
         <namedValue name="to">
-          <value class="value" valueClass="string"/>
+          <value class="value"/>
         </namedValue>
         <namedValue name="cc">
-          <value class="value" valueClass="string"/>
+          <value class="value"/>
         </namedValue>
         <namedValue name="subject">
           <value class="value" valueClass="string">Test Plan Execution</value>
         </namedValue>
         <namedValue name="emailBody">
           <value class="value" valueClass="string">Test Plan Run Report</value>
-        </namedValue>
-      </settings>
-    </planFeature>
-    <planFeature enabled="true" name="PIECHART" type="OUTPUT">
-      <settings mutable="Mutable">
-        <namedValue name="enabled">
-          <value class="value" valueClass="boolean">true</value>
-        </namedValue>
-        <namedValue name="includeLegend">
-          <value class="value" valueClass="boolean">true</value>
-        </namedValue>
-        <namedValue name="artifactName">
-          <value class="value" valueClass="string">pieChart.png</value>
         </namedValue>
       </settings>
     </planFeature>
