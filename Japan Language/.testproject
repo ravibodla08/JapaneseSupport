@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject guid="805c08f2-ed44-430b-bf47-a12e4b759a03" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
+<testProject guid="805c08f2-ed44-430b-bf47-a12e4b759a03" secretsEncryption="JASYPT" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
   <title>/Japan Language/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
