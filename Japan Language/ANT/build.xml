@@ -1,9 +1,9 @@
 <project default="runtests">
 	<property name="version" value="2.316.5.0"/>
 	<property environment="env"/>
-	<property name="provar.home" value="/Applications/Provar.app/Contents/Eclipse/"/>
-	<property name="testproject.home" value=".."/>
-	<property name="testproject.results" value="../ANT/Results"/>
+	<property name="provar.home" value="${env.PROVAR_HOME}"/>
+	<property name="testproject.home" value="${env.PROJECT_WORKSPACE}"/>
+	<property name="testproject.results" value="${testproject.home}/ANT/Results"/>
 	<property name="secrets.password" value="${env.ProvarSecretsPassword}"/>
 
 	<taskdef name="Provar-Compile" classname="com.provar.testrunner.ant.CompileTask" classpath="${provar.home}/ant/ant-provar.jar"/>
@@ -17,14 +17,14 @@
 		<Run-Test-Case provarHome="${provar.home}" 
 				projectPath="${testproject.home}" 
 				resultsPath="${testproject.results}" 
-				resultsPathDisposition="Increment" 
-				testEnvironment="" 
-				webBrowser="Chrome" 
+				resultsPathDisposition="${env.RESULTS_PATH_SETTING}"
+				testEnvironment="${env.ENVIRONMENT}"
+				webBrowser="${env.BROWSER}"
 				webBrowserConfiguration="Full Screen"
 				webBrowserProviderName="Desktop"
 				webBrowserDeviceName="Full Screen" 
-				salesforceMetadataCache="Reuse" 
-				projectCachePath="../.provarCaches"
+				salesforceMetadataCache="${env.CACHE_SETTING}"
+				projectCachePath="${testproject.home}/.provarCaches"
 				testOutputlevel="BASIC" 
 				pluginOutputlevel="WARNING"
 				stopTestRunOnError="false"
@@ -32,7 +32,7 @@
 				secretsPassword="${secrets.password}"
 				invokeTestRunMonitor="true"
 		>
-			<fileset id="testplan" dir="../plans/テストケースPlan/テストケースFolder"><include name="Japanese2.testinstance"/></fileset>
+			<fileset id="testplan" dir="${testproject.home}/plans/${env.TEST_PLAN}"/>
 			<planFeature name="PDF" type="OUTPUT" enabled="true"/>
 			<planFeature name="PIECHART" type="OUTPUT" enabled="true"/>
 			<planFeature name="EMAIL" type="NOTIFICATION" enabled="false"/>
